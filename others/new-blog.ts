@@ -28,7 +28,7 @@ async function go() {
           }
           const slug = slugify(input)
           if (blogs.includes(slug)) {
-            return `Blog named ${input} alread exist, enter another blog name.`
+            return `Blog named ${input} already exist, enter another blog name.`
           }
           return true
         },

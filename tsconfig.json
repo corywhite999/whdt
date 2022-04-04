@@ -1,0 +1,13 @@
+{
+  "files": [],
+  "exclude": ["node_modules"],
+  "extends": "./others/shared-tsconfig.json",
+  "references": [
+    { "path": "app" },
+    { "path": "content" },
+    { "path": "mocks" },
+    { "path": "cypress" },
+    { "path": "server" },
+    { "path": "test" }
+  ]
+}

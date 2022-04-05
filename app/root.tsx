@@ -21,7 +21,7 @@ import {
   useTheme,
 } from './utils/theme'
 import { getThemeSession } from './utils/theme-session.server'
-import { preloadSvg } from './components/theme-toggle'
+import { preloadSvg } from './components/theme-toggle';
 
 import appStyles from '~/styles/app.css'
 import skipNavStyles from '@reach/skip-nav/styles.css'

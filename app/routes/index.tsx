@@ -1,4 +1,3 @@
-import type * as React from 'react'
 import { useLoaderData } from '@remix-run/react'
 import type {
   HeadersFunction,
@@ -6,10 +5,13 @@ import type {
   LoaderFunction,
   MetaFunction,
 } from '@remix-run/server-runtime'
+import { Theme, useTheme } from '../utils/theme'
 import { json } from '@remix-run/server-runtime'
 import BlogList from '~/components/blog-list'
 import { getMdxListItems } from '~/utils/mdx.server'
 import { getSeo } from '~/utils/seo'
+import LogoDark from '~/assets/images/white-house-dark.png'
+import LogoLight from '~/assets/images/white-house-light.png'
 
 type LoaderData = { blogList: Awaited<ReturnType<typeof getMdxListItems>> }
 
@@ -42,14 +44,14 @@ export const loader: LoaderFunction = async () => {
 
 export default function Index() {
   const { blogList } = useLoaderData<LoaderData>()
+  const [theme] = useTheme()
 
   return (
     <>
       <section className='mx-auto max-w-4xl'>
         <div className='grid h-[calc(100vh-92px)] place-content-center'>
           <h1 className='flex flex-col items-center p-4'>
-            <GradientText>Remix</GradientText>
-            <GradientText>Blog</GradientText>
+            <img className='h-64' src={theme === Theme.dark ? LogoDark : LogoLight} alt='Logo' />
           </h1>
         </div>
       </section>
@@ -62,14 +64,5 @@ export default function Index() {
         </div>
       </section>
     </>
-  )
-}
-
-function GradientText(props: React.HTMLAttributes<HTMLSpanElement>) {
-  return (
-    <span
-      className='bg-gradient-to-r from-sky-600 via-pink-500 to-red-600 bg-clip-text text-center text-6xl leading-snug text-transparent dark:via-blue-400 dark:to-green-300'
-      {...props}
-    />
   )
 }

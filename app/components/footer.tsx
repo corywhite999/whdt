@@ -17,7 +17,7 @@ export default function Footer() {
       <div className='flex flex-col gap-32 md:flex-row'>
         <div className='flex flex-col gap-8'>
           <h3 className='place-self-center text-4xl font-bold text-gray-800 dark:text-gray-100'>
-            Remix Blog
+            White House Drum Tracking
           </h3>
           <ul className='flex items-center justify-center gap-6'>
             <Link href='https://github.com/remix-run/remix'>
@@ -32,12 +32,6 @@ export default function Footer() {
               </Svg>
               <span className='sr-only'>Twitter</span>
             </Link>
-          </ul>
-        </div>
-        <div className='flex flex-col justify-center'>
-          <ul className='flex flex-col items-center gap-4 md:items-start'>
-            <Link href='/'>Home</Link>
-            <Link href='/blog'>Blog</Link>
           </ul>
         </div>
       </div>

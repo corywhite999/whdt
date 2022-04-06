@@ -69,7 +69,7 @@ function App() {
         <Meta />
         <Links />
       </head>
-      <body className='h-full bg-white dark:bg-slate-800'>
+      <body className='h-full bg-white dark:bg-black'>
         <SkipNavLink className='bg-gray-700'>Skip to content</SkipNavLink>
         <div className='flex h-full flex-col'>
           <Nav />

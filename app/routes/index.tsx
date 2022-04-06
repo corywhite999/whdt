@@ -8,6 +8,7 @@ import { Theme, useTheme } from '../utils/theme'
 import { json } from '@remix-run/server-runtime'
 import { getMdxListItems } from '~/utils/mdx.server'
 import { getSeo } from '~/utils/seo'
+import Card from '~/components/Card'
 import LogoDark from '~/assets/images/white-house-dark.png'
 import LogoLight from '~/assets/images/white-house-light.png'
 
@@ -45,7 +46,7 @@ export default function Index() {
 
   return (
     <article>
-      <section className='flex flex-col justify-between mx-auto h-screen max-w-4xl divide-y'>
+      <section className='mx-auto flex h-screen max-w-4xl flex-col justify-between divide-y'>
         <h1 className='flex min-h-[30%] flex-col items-center p-4'>
           <img
             className='h-64'
@@ -53,29 +54,20 @@ export default function Index() {
             alt='Logo'
           />
         </h1>
-        <section className='flex min-h-[60%]'>
+        <section className='flex min-h-[60%] flex-auto'>
           <div className='mx-3 my-3 mb-3 flex flex-row'>
-            <div className='w-72 h-48 m-3 flex flex-col rounded-lg bg-white shadow border-solid border divide-y'>
-              <span className='font-semibold px-2 pt-1 uppercase text-center'>Drums</span>
-              <span className='mt-3 mx-2 px-2 pt-4 text-center'>
-                Custom drums tracks created with as little or as much direction
-                as you want to provide.
-              </span>
-            </div>
-            <div className='w-72 h-48 m-3 flex flex-col rounded-lg bg-white shadow border-solid border divide-y'>
-              <span className='font-semibold px-2 pt-1 uppercase text-center'>Percussion</span>
-              <span className='mt-3 mx-2 px-2 pt-4 text-center'>
-                Shakers, tambourines, the usual. Anything that serves your song
-                and gets your vibe happening.
-              </span>
-            </div>
-            <div className='w-72 h-48 m-3 flex flex-col rounded-lg bg-white shadow border-solid border divide-y'>
-              <span className='font-semibold px-2 pt-1 uppercase text-center'>Noises</span>
-              <span className='mt-3 mx-2 px-2 pt-4 text-center'>
-                Coke bottles, pans of wrenches, bleeps and blips, whatever. If
-                it makes your song sound cool, I'll hit it with a stick.
-              </span>
-            </div>
+            <Card title='Drums'>
+              Custom drum tracks created with as little or as much direction as
+              you want to provide.
+            </Card>
+            <Card title='Percussion'>
+              Shakers, tambourines, the usual. Anything that serves your song
+              and gets your vibe happening.
+            </Card>
+            <Card title='Noises'>
+              Coke bottles, pans of wrenches, bleeps and blips, whatever. If it
+              makes your song sound cool, I'll hit it with a stick.
+            </Card>
           </div>
         </section>
       </section>
